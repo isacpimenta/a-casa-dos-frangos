@@ -1,0 +1,245 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+
+:root {
+    --font-links-header: "Staatliches", sans-serif;
+    --font-padrao: "Josefin Sans", sans-serif;
+    --font-titulos: "Passion One", sans-serif;
+
+    --cor-header: #F68423;
+    --cor-body: #F9F4EB;
+
+    --cor-links: #F53B22;
+    --cor-titulos: #F5A622;
+    --cor-preta: #000;
+    --cor-branca: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cor-body);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.conteiner {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: var(--font-padrao);
+}
+
+.conteiner main {
+    flex: 1; /* Faz o main crescer e ocupar o espaço disponível */
+}
+
+#ad1 img {
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+.conteiner footer {
+    background-color: var(--cor-header);
+    color: var(--cor-branca);
+    padding: 20px;
+    text-align: center;
+    min-height: 10%; /* Mantém uma altura mínima */
+}
+
+.conteiner header {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px black;
+
+    align-items: center;
+    justify-content: center;
+
+
+    min-height: 10vh;
+    padding: 0 200px;
+}
+
+header div img{
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 0 0 10px 10px;
+}
+
+.conteiner header img {
+    position: absolute;
+    top: 40px;
+    left: 100px;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+nav a {
+    margin-right: 20px;
+    font-family: var(--font-links-header);
+    text-decoration: none;
+    color: var(--cor-links);
+    font-size: 20px;
+    font-weight: 400;
+
+}
+
+nav a:hover {
+    color: var(--cor-header);
+}
+
+.ativo {
+    background-color: var(--cor-header);
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--cor-branca);
+}
+
+.ativo:hover {
+    color: var(--cor-branca);
+}
+
+#ad1 {
+    margin-bottom: 5px;
+}
+
+.conteiner-button {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    background-color: red;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+/* Seção Sobre Nós */
+#sobre-nos {
+    padding: 50px;
+    background-color: var(--cor-body);
+    text-align: center;
+}
+
+#sobre-nos h2 {
+    font-family: var(--font-titulos);
+    color: var(--cor-titulos);
+    margin-bottom: 20px;
+}
+
+#sobre-nos p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--cor-preta);
+}
+
+/* Galeria de Imagens */
+#galeria {
+    padding: 50px;
+    background-color: var(--cor-body);
+    text-align: center;
+}
+
+#galeria h2 {
+    font-family: var(--font-titulos);
+    color: var(--cor-titulos);
+    margin-bottom: 20px;
+}
+
+.galeria-imagens {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.galeria-imagens img {
+    max-width: 300px;
+    min-height: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pratos p{
+    display: none;
+}
+
+.pratos:hover p {
+    display: block;
+    background-color: #f685237d;
+    padding: 5px;
+}
+
+/* Seção Depoimentos */
+#depoimentos {
+    padding: 50px;
+    background-color: var(--cor-body);
+    text-align: center;
+}
+
+#depoimentos h2 {
+    font-family: var(--font-titulos);
+    color: var(--cor-titulos);
+    margin-bottom: 20px;
+}
+
+.depoimento {
+    margin-bottom: 20px;
+    font-style: italic;
+    color: var(--cor-preta);
+}
+
+.depoimento span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--cor-links);
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-header);
+    color: var(--cor-branca);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+}
+
+.footer-coluna h4 {
+    font-family: var(--font-titulos);
+    margin-bottom: 10px;
+}
+
+.footer-coluna p, .footer-coluna a {
+    color: var(--cor-branca);
+    text-decoration: none;
+    padding: 0 5px;
+}
+
+.footer-coluna a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-top: 20px;
+}
