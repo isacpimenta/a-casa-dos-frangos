@@ -252,14 +252,7 @@ i {
     flex: 1; /* Faz o main crescer e ocupar o espaço disponível */
 }
 
-.conteiner footer {
-    background-color: var(--cor-header);
-    color: var(--cor-branca);
-    padding: 20px;
-    text-align: center;
-    min-height: 10%; /* Mantém uma altura mínima */
-}
-
+/* Rodapé */
 footer {
     background-color: var(--cor-header);
     color: var(--cor-branca);

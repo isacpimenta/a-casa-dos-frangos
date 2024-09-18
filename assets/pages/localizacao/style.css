@@ -39,26 +39,25 @@
     box-shadow: 1px 1px 1px 1px black;
 
     align-items: center;
-    justify-content: center;
-
+    justify-content: space-around;
 
     min-height: 10vh;
-    padding: 0 200px;
+    padding: 0;
+
+    /* Fixando o cabeçalho */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 header div img{
     background-color: white;
     padding: 10px;
-    border: 1px solid black;
-    border-radius: 0 0 10px 10px;
-}
-
-.conteiner header img {
-    position: absolute;
-    top: 40px;
-    left: 100px;
-    max-width: 100px;
-    max-height: 100px;
+    border-radius: 100%;
+    max-width: 70px;
+    max-height: 70px;
 }
 
 nav a {
@@ -105,4 +104,37 @@ main .info {
 
 main .img {
     width: 60%;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--cor-header);
+    color: var(--cor-branca);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+}
+
+.footer-coluna h4 {
+    font-family: var(--font-titulos);
+    margin-bottom: 10px;
+}
+
+.footer-coluna p, .footer-coluna a {
+    color: var(--cor-branca);
+    text-decoration: none;
+    padding: 0 5px;
+}
+
+.footer-coluna a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-top: 20px;
 }
