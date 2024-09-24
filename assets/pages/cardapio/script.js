@@ -32,6 +32,7 @@ function atualizarCarrinho() {
     const listaCarrinho = document.getElementById('itens-carrinho');
     const totalCarrinho = document.getElementById('total-carrinho');
     const totalAPagar = document.getElementById('total-a-pagar');
+    const finalizarCompraBtn = document.getElementById('finalizar-compra');
 
     total = 0; // Reset total
     listaCarrinho.innerHTML = ''; // Limpa a lista de itens do carrinho
