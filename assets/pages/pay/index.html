@@ -4,74 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finalização da Compra</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .form-container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        input, select, button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-        }
-        button {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #218838;
-        }
-        .carrinho {
-            margin: 20px 0;
-        }
-        .carrinho ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .carrinho li {
-            border-bottom: 1px solid #ccc;
-            padding: 5px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="form-container">
-        <h2>Finalização da Compra</h2>
-        
-        <label for="metodo-pagamento">Método de Pagamento:</label>
-        <select id="metodo-pagamento" required>
-            <option value="" disabled selected>Selecione um método</option>
-            <option value="cartao">Cartão de Crédito</option>
-            <option value="debito">Cartão de Débito</option>
-            <option value="dinheiro">Dinheiro</option>
-        </select>
-
-        <label>Opção de Entrega:</label>
-        <div>
-            <input type="radio" id="entrega" name="opcao-entrega" value="entrega" required>
-            <label for="entrega">Entrega</label>
-            <input type="radio" id="retirar" name="opcao-entrega" value="retirar" required>
-            <label for="retirar">Retirar no Estabelecimento</label>
-        </div>
-
-        <div class="carrinho">
-            <h3>Itens do Carrinho</h3>
-            <ul id="carrinho-itens"></ul>
-        </div>
-
-        <button onclick="finalizarCompra()">Finalizar Compra</button>
-        <p id="mensagem"></p>
+<div class="form-container">
+    <div class="header">
+        <img src="../../img/logo.jpg" alt="Logo Casa dos Frangos" class="logo-top">
+        <h1>FINALIZAR COMPRA</h1>
     </div>
+
+    <div class="carrinho">
+        <h3>Itens do Carrinho</h3>
+        <ul id="carrinho-itens"></ul>
+        <p><span id="total-a-pagar">0.00</span></p>
+    </div>
+
+    <label for="metodo-pagamento">Método de Pagamento:</label>
+    <select id="metodo-pagamento" required>
+        <option value="" disabled selected>Selecione um método</option>
+        <option value="cartao">Cartão de Crédito</option>
+        <option value="debito">Cartão de Débito</option>
+        <option value="dinheiro">Dinheiro</option>
+    </select>
+
+    <label>Opção de Entrega:</label>
+    <div class="option">
+        <button type="button" id="btn-entrega" onclick="selecionarEntrega('entrega')">Entrega</button>
+    </div>
+    <div class="option">
+        <button type="button" id="btn-retirar" onclick="selecionarEntrega('retirar')">Retirar no Estabelecimento</button>
+    </div>
+
+    <div id="endereco-div" style="display:none;">
+        <label for="cep">CEP para Entrega:</label>
+        <input type="text" id="cep" placeholder="Digite seu CEP">
+        <button class="green-btn" type="button" onclick="buscarEndereco()">Buscar Endereço</button>
+    </div>
+    
+    <!-- Modal para confirmar endereço -->
+    <div id="modal-confirmacao" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Confirmar Endereço de Entrega</h2>
+            <label for="numero">Número:</label>
+            <input type="text" id="numero" placeholder="Digite o número" required>
+
+            <label for="ponto-referencia">Ponto de Referência:</label>
+            <input type="text" id="ponto-referencia" placeholder="Digite um ponto de referência">
+            <p id="endereco-confirmacao"></p>
+            <button class="green-btn" type="button" onclick="confirmarEndereco()">Confirmar</button>
+        </div>
+    </div>
+
+    <button id="finalizar-button" style="display:none;" onclick="finalizarCompra()">Finalizar Compra</button>
+    <p id="mensagem"></p>
+</div>
+
+<!-- Modal para compra finalizada -->
+<div id="modal-finalizado" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close-finalizado">&times;</span>
+        <div class="header">
+            <img src="../../img/logo.jpg" alt="Logo Casa dos Frangos" class="logo-top">
+            <h1>COMPRA finalizada</h1>
+        </div>
+        <p>Nossos funcionários estão preparando o melhor pra você!</p>
+    </div>
+</div>
 
 <script src="script.js"></script>
 </body>

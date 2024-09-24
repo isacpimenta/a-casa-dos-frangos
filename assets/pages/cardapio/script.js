@@ -31,11 +31,14 @@ function adicionarAoCarrinho(nome, preco, imagem) {
 function atualizarCarrinho() {
     const listaCarrinho = document.getElementById('itens-carrinho');
     const totalCarrinho = document.getElementById('total-carrinho');
-    const finalizarCompraBtn = document.getElementById('finalizar-compra');
-    
+    const totalAPagar = document.getElementById('total-a-pagar');
+
+    total = 0; // Reset total
     listaCarrinho.innerHTML = ''; // Limpa a lista de itens do carrinho
 
     carrinho.forEach(item => {
+        total += item.preco * item.quantidade; // Atualiza o total com o preço * quantidade
+
         const li = document.createElement('li');
         li.innerText = `${item.nome} - R$${item.preco.toFixed(2)} ${item.quantidade > 1 ? `(${item.quantidade}x)` : ''}`;
         
@@ -50,9 +53,11 @@ function atualizarCarrinho() {
         listaCarrinho.appendChild(li);
     });
 
-    totalCarrinho.innerText = total.toFixed(2);
+    totalCarrinho.innerText = total.toFixed(2); // Atualiza o elemento de total no carrinho
+    totalAPagar.innerText = total.toFixed(2); // Atualiza o total a pagar na página de finalização
     finalizarCompraBtn.style.display = carrinho.length > 0 ? 'block' : 'none';
 }
+
 
 
 // Função para atualizar o carrinho na interface
@@ -146,9 +151,10 @@ finalizarCompraBtn.onclick = function() {
         return;
     }
 
-    // Aqui você pode salvar os dados do carrinho, se necessário, ou preparar para o pagamento
-    // Exemplo: localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    localStorage.setItem('totalAPagar', JSON.stringify(carrinho));
 
     // Redireciona para a página de pagamento
     window.location.href = "../pay/index.html";
 };
+
