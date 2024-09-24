@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha a Sede</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>ESCOLHA A SEDE</h1>
+            <div class="section">
+                <img src="assets/img/logo.jpg" alt="Logo Casa dos Frangos" class="logo">
+                <div class="buttons">
+                    <button class="location-btn" id="raul-cortez-btn">PRÓXIMO AO RAUL CORTEZ</button>
+                    <button class="location-btn" id="prezunic-btn">PRÓXIMO AO PREZUNIC</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('raul-cortez-btn').addEventListener('click', function() {
+            window.location.href = 'assets/pages/confirm/confirm.html';
+        });
+
+        document.getElementById('prezunic-btn').addEventListener('click', function() {
+            window.location.href = 'assets/pages/confirm/confirm2.html';
+        });
+    </script>
+</body>
+</html>

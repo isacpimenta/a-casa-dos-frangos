@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Local</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="header">
+                <img src="../../img/logo.jpg" alt="Logo Casa dos Frangos" class="logo-top">
+                <h1>CONFIRMAÇÃO</h1>
+            </div>
+                <img src="../../img/prezu.png" alt="Casa dos Frangos" class="location-image">
+            <div class="info">    
+                <p>Av. Dr. Manoel Teles, 102 - Centro,
+                    Duque de Caxias - RJ, 25010-090</p>
+                <h2>ESTE É O LOCAL CORRETO?</h2>
+                <div class="confirmation-buttons">
+                    <button class="confirm-btn" id="like-btn"><i class="fa-regular fa-thumbs-up"></i></button>
+                    <button class="confirm-btn" id="deslike-btn"><i class="fa-regular fa-thumbs-down"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('like-btn').addEventListener('click', function() {
+            window.location.href = '../index/index.html';
+        });
+
+        document.getElementById('deslike-btn').addEventListener('click', function() {
+            window.location.href = '../../../index.html';
+        });
+    </script>
+</body>
+</html>
