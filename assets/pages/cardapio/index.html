@@ -28,106 +28,119 @@
     </header>
 
     <main>
+        <!-- Exemplo de filtro de preço -->
+        <div class="filtros">
+            <button class="filtro-preco" value="baixo">Até R$35</button>
+            <button class="filtro-preco" value="medio">R$36 a R$50</button>
+            <button class="filtro-preco" value="alto">Acima de R$50</button>
+
+            <button class="filtro-tipo ativo" value="todos">Tudo</button>
+            <button class="filtro-tipo" value="prato">Pratos</button>
+            <button class="filtro-tipo" value="bebida">Bebidas</button>
+        </div>
+
+
+        
         <div class="menu">
             <section id="comidas">
                 <h1>PRATOS</h1>
 
-                <div class="item">
-                    <i class="fa-solid fa-info btn-info" onclick="abrirModal('Item 1', 'Frango, molho de tomate, pimentões, alho, cebola, ervas (como tomilho), suco de limão.', 45.00 ,'../../img/prato1.jpg')"></i>
+                <div class="item" data-tipo="prato">
+                    <i class="fa-solid fa-info btn-info" onclick="abrirModal('Frango ao Molho Picante', 'Frango, molho de tomate, pimentões, alho, cebola, ervas (como tomilho), suco de limão.', 45.00 ,'../../img/prato1.jpg')"></i>
                 
                     <div class="info">
                         <h2>Frango ao Molho Picante</h2>
                         <p>R$45.00</p>
-                        <button onclick="adicionarAoCarrinho('Item 1', 45.00)">Adicionar</button>
+                        <button onclick="adicionarAoCarrinho('Frango ao Molho Picante', 45.00, '../../img/prato1.jpg')">Adicionar</button>
                     </div>
                     <div class="img">
                         <img src="../../img/prato1.jpg" alt="Frango ao Molho Picante">
                     </div>
                 </div>
                 
-                <div class="item">
+                <div class="item" data-tipo="prato">
                     <i class="fa-solid fa-info btn-info" onclick="abrirModal('Peito de Frango Grelhado com Legumes', 'Peito de frango grelhado, brócolis, cenoura, couve-flor, azeite de oliva, tempero de sal e pimenta.', 35.00,'../../img/prato2.jpg')"></i>
                     <div class="info">
                         <h2>Peito de Frango Grelhado com Legumes</h2>
                         <p>R$35.00</p>
-                        <button onclick="adicionarAoCarrinho('Peito de Frango Grelhado com Legumes', 35.00)">Adicionar</button>
+                        <button onclick="adicionarAoCarrinho('Peito de Frango Grelhado com Legumes', 35.00,'../../img/prato2.jpg')">Adicionar</button>
                     </div>
                     <div class="img">
                         <img src="../../img/prato2.jpg" alt="Peito de Frango Grelhado com Legumes">
                     </div>
                 </div>
-                <div class="item">
+                <div class="item" data-tipo="prato">
                     <i class="fa-solid fa-info btn-info" onclick="abrirModal('Frango Assado com Legumes e Arroz', 'Coxa de frango, cenouras, abobrinhas, tomates, arroz selvagem, cogumelos, molho de ervas.', 50.00,'../../img/prato3.jpg')"></i>
                     <div class="info">
                         <h2>Frango Assado com Legumes e Arroz</h2>
                         <p>R$50.00</p>
-                        <button onclick="adicionarAoCarrinho('Frango Assado com Legumes e Arroz', 50.00)">Adicionar</button>
+                        <button onclick="adicionarAoCarrinho('Frango Assado com Legumes e Arroz', 50.00,'../../img/prato3.jpg')">Adicionar</button>
                     </div>
                     <div class="img">
                         <img src="../../img/prato3.jpg" alt="Item 3">
                     </div>
                 </div>
-                <div class="item">
+                <div class="item" data-tipo="prato">
                     <i class="fa-solid fa-info btn-info" onclick="abrirModal('Frango Assado com Alecrim', 'Frango inteiro assado, alecrim, alho, azeite de oliva, sal e pimenta. Pode ser servido com acompanhamentos, como batatas ou farofa.', 60.00,'../../img/prato4.jpg')"></i>
                     <div class="info">
                         <h2>Frango Assado com Alecrim</h2>
                         <p>R$60.00</p>
-                        <button onclick="adicionarAoCarrinho('Frango Assado com Alecrim', 60.00)">Adicionar</button>
+                        <button onclick="adicionarAoCarrinho('Frango Assado com Alecrim', 60.00,'../../img/prato4.jpg')">Adicionar</button>
                     </div>
                     <div class="img">
                         <img src="../../img/prato4.jpg" alt="Frango Assado com Alecrim">
                     </div>
                 </div>
-                <div class="item">
+                <div class="item" data-tipo="prato">
                     <i class="fa-solid fa-info btn-info" onclick="abrirModal('Item 5', 'Frango à passarinho, arroz branco, feijão preto, salada de batata com maionese.', 35.00,'../../img/prato5.jpg')"></i>
                     <div class="info">
                         <h2>Frango à Passarinho + Acompanhamentos</h2>
                         <p>R$35.00</p>
-                        <button onclick="adicionarAoCarrinho('Frango à Passarinho com Acompanhamentos', 35.00)">Adicionar</button>
+                        <button onclick="adicionarAoCarrinho('Frango à Passarinho com Acompanhamentos', 35.00,'../../img/prato5.jpg')">Adicionar</button>
                     </div>
                     <div class="img">
                         <img src="../../img/prato5.jpg" alt="Item 5">
                     </div>
                 </div>
-                <div class="item">
-                    <i class="fa-solid fa-info btn-info" onclick="abrirModal('Frango com Batatas e Salada', 'Frango, Alho, Óleo, Batatas, salada', 5.00,'../../img/prato6.jpg')"></i>
+                <div class="item" data-tipo="prato">
+                    <i class="fa-solid fa-info btn-info" onclick="abrirModal('Frango com Batatas e Salada', 'Frango, Alho, Óleo, Batatas, salada', 55.00,'../../img/prato6.jpg')"></i>
                     <div class="info">
                         <h2>Frango com Batatas e Salada</h2>
                         <p>R$60.00</p>
-                        <button onclick="adicionarAoCarrinho('Frango com Batatas e Salada', 5.00)">Adicionar</button>
+                        <button onclick="adicionarAoCarrinho('Frango com Batatas e Salada', 55.00,'../../img/prato6.jpg')">Adicionar</button>
                     </div>
                     <div class="img">
                         <img src="../../img/prato6.jpg" alt="Frango com Batatas e Salada">
                     </div>
                 </div>
-                <div class="item">
+                <div class="item" data-tipo="prato">
                     <i class="fa-solid fa-info btn-info" onclick="abrirModal('Coxa de Frango Assada com Arroz e Salada Verde', 'Coxa de frango assada, arroz branco, passas, folhas de espinafre e tomate cereja.', 30.00,'../../img/prato7.jpg')"></i>
                     <div class="info">
                         <h2>Coxa de Frango Assada com Arroz e Salada Verde</h2>
                         <p>R$30.00</p>
-                        <button onclick="adicionarAoCarrinho('Coxa de Frango Assada com Arroz e Salada Verde', 30.00)">Adicionar</button>
+                        <button onclick="adicionarAoCarrinho('Coxa de Frango Assada com Arroz e Salada Verde', 30.00,'../../img/prato7.jpg')">Adicionar</button>
                     </div>
                     <div class="img">
                         <img src="../../img/prato7.jpg" alt="Coxa de Frango Assada com Arroz e Salada Verde">
                     </div>
                 </div>
-                <div class="item">
+                <div class="item" data-tipo="prato">
                     <i class="fa-solid fa-info btn-info" onclick="abrirModal('Frango à Parmegiana com Espaguete', 'Coxa de frango, espaguete, molho de tomate, queijo ralado, temperos (alho, cebola, sal, pimenta)', 40.00,'../../img/prato8.jpg')"></i>
                     <div class="info">
                         <h2>Frango à Parmegiana com Espaguete</h2>
                         <p>R$40.00</p>
-                        <button onclick="adicionarAoCarrinho('Frango à Parmegiana com Espaguete', 40.00)">Adicionar</button>
+                        <button onclick="adicionarAoCarrinho('Frango à Parmegiana com Espaguete', 40.00,'../../img/prato8.jpg')">Adicionar</button>
                     </div>
                     <div class="img">
                         <img src="../../img/prato8.jpg" alt="Frango à Parmegiana com Espaguete">
                     </div>
                 </div>
-                <div class="item">
+                <div class="item" data-tipo="prato">
                     <i class="fa-solid fa-info btn-info" onclick="abrirModal('Frango Assado com Farofa', 'Frango assado, farofa com bacon, azeitonas, cenoura ralada, e farinha de mandioca.', 55.00,'../../img/prato9.jpg')"></i>
                     <div class="info">
                         <h2>Frango Assado com Farofa</h2>
                         <p>R$55.00</p>
-                        <button onclick="adicionarAoCarrinho('Frango Assado com Farofa', 55.00)">Adicionar</button>
+                        <button onclick="adicionarAoCarrinho('Frango Assado com Farofa', 55.00,'../../img/prato9.jpg')">Adicionar</button>
                     </div>
                     <div class="img">
                         <img src="../../img/prato9.jpg" alt="Frango Assado com Farofa">
@@ -139,31 +152,31 @@
             <section id="bebidas">
                 <h1>BEBIDAS</h1>
 
-                <div class="item">
+                <div class="item" data-tipo="bebida">
                     <div class="info">
                         <h2>Latinha de Coca-Cola</h2>
                         <p>R$6.00</p>
-                        <button onclick="adicionarAoCarrinho('Latinha de Coca-Cola', 6.00)">Adicionar</button>
+                        <button onclick="adicionarAoCarrinho('Latinha de Coca-Cola', 6.00, '../../img/b1.png')">Adicionar</button>
                     </div>
                     <div class="img">
                         <img src="../../img/b1.png" alt="Latinha de Coca-Cola">
                     </div>
                 </div>
-                <div class="item">
+                <div class="item" data-tipo="bebida">
                     <div class="info">
                         <h2>Coca-Cola KS</h2>
                         <p>R$8.50</p>
-                        <button onclick="adicionarAoCarrinho('Coca-Cola KS', 8.50)">Adicionar</button>
+                        <button onclick="adicionarAoCarrinho('Coca-Cola KS', 8.50, '../../img/b2.png')">Adicionar</button>
                     </div>
                     <div class="img">
                         <img src="../../img/b2.png" alt="Coca-Cola KS">
                     </div>
                 </div>
-                <div class="item">
+                <div class="item" data-tipo="bebida">
                     <div class="info">
                         <h2>Coca-Cola 2L</h2>
                         <p>R$12.00</p>
-                        <button onclick="adicionarAoCarrinho('Coca-Cola 2L', 12.00)">Adicionar</button>
+                        <button onclick="adicionarAoCarrinho('Coca-Cola 2L', 12.00, '../../img/b3.png')">Adicionar</button>
                     </div>
                     <div class="img">
                         <img src="../../img/b3.png" alt="Latinha de Coca-Cola">
@@ -178,9 +191,11 @@
         <span class="close-carrinho">&times;</span>
         <h2>Carrinho de Compras</h2>
         <ul id="itens-carrinho"></ul>
+        <img src="" alt="" class="img-carrinho">
         <p>Total: R$<span id="total-carrinho">0.00</span></p>
+        <button id="finalizar-compra" style="display: none;">Finalizar Compra</button>
     </div>
-
+    
     <div id="info-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -213,6 +228,5 @@
         </div>
         <p>&copy; 2024 CASA DOS FRANGOS. Todos os direitos reservados.</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>

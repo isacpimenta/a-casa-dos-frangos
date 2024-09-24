@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Restaurante</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Formulário de Login -->
+    <div class="form-container">
+        <div class="header">
+            <img src="../../img/logo.jpg" alt="Logo Casa dos Frangos" class="logo-top">
+            <h1>LOGIN</h1>
+        </div>
+        <input type="text" id="login-username" placeholder="Nome de usuário" required>
+        <input type="password" id="login-password" placeholder="Senha" required>
+        <button onclick="login()">Entrar</button>
+        <p id="login-message" class="message"></p>
+        <a href="#" onclick="toggleRegister()">Não tem conta?</a> <!-- Link para abrir registro -->
+    </div>
+
+    <!-- Formulário de Registro -->
+    <div class="form-container" id="register-container">
+        <div class="header">
+            <img src="../../img/logo.jpg" alt="Logo Casa dos Frangos" class="logo-top">
+            <h1>REGISTRO</h1>
+        </div>
+        <input type="text" id="register-username" placeholder="Nome de usuário" required>
+        <input type="password" id="register-password" placeholder="Senha" required>
+        <button onclick="register()">Registrar</button>
+        <p id="register-message" class="message"></p>
+        <p><a href="#" onclick="toggleLogin()">Já tem conta?</a></p> <!-- Link para voltar ao login -->
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

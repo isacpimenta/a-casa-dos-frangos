@@ -1,10 +1,6 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&family=Staatliches&family=Passion+One:wght@400;700;900&display=swap');
 
 :root {
     --font-links-header: "Staatliches", sans-serif;
@@ -13,11 +9,11 @@
 
     --cor-header: #F68423;
     --cor-body: #F9F4EB;
-
     --cor-links: #F53B22;
     --cor-titulos: #F5A622;
     --cor-preta: #000;
     --cor-branca: #fff;
+    --cor-fundo-claro: #f0f0f0; /* Variável para fundo claro */
 }
 
 * {
@@ -37,14 +33,10 @@
     flex-direction: row;
     background-color: white;
     box-shadow: 1px 1px 1px 1px black;
-
     align-items: center;
     justify-content: space-around;
-
     min-height: 10vh;
     padding: 0;
-
-    /* Fixando o cabeçalho */
     position: fixed;
     top: 0;
     left: 0;
@@ -52,7 +44,7 @@
     z-index: 1000;
 }
 
-header div img{
+header div img {
     background-color: white;
     padding: 10px;
     border-radius: 100%;
@@ -67,7 +59,6 @@ nav a {
     color: var(--cor-links);
     font-size: 20px;
     font-weight: 400;
-
 }
 
 nav a:hover {
@@ -78,10 +69,6 @@ nav a:hover {
     background-color: var(--cor-header);
     padding: 5px;
     border-radius: 5px;
-    color: var(--cor-branca);
-}
-
-.ativo:hover {
     color: var(--cor-branca);
 }
 
@@ -121,7 +108,7 @@ main .info {
     width: 40%;
 }
 
-.info h2{
+.info h2 {
     font-size: 16px;
     margin-bottom: 7px;
     text-align: center;
@@ -131,17 +118,16 @@ main .img img {
     border-radius: 10%;
 }
 
-.info button{
-    background-color: #F5A622;
-    color: #000;
+.info button {
+    background-color: var(--cor-titulos); /* Usar variável */
+    color: var(--cor-preta);
     border: 0;
     border-radius: 5px;
     min-height: 30px;
     min-width: 70px;
-
     margin-top: 5px;
-
     cursor: pointer;
+    transition: background-color 0.3s ease; /* Adicionando transição */
 }
 
 main .item img {
@@ -150,20 +136,19 @@ main .item img {
     object-fit: cover;
 }
 
-#comidas h1, #bebidas h1 {
+#comidas h1,
+#bebidas h1 {
     text-align: center;
     margin-bottom: 10px;
-
 }
 
-/* Carrinho começa oculto fora da tela */
 #carrinho {
     position: fixed;
     top: 0;
     right: -100%;
     width: 300px;
     height: 100%;
-    background-color: #f0f0f0;
+    background-color: var(--cor-fundo-claro); /* Usar variável */
     border-left: 1px solid #ccc;
     padding: 20px;
     box-shadow: -3px 0 5px rgba(0, 0, 0, 0.2);
@@ -196,22 +181,20 @@ main .item img {
     font-size: 1.2em;
 }
 
-/* Estilização do ícone do carrinho */
 .carrinho-icone {
     cursor: pointer;
-    color: #F68423;   
+    color: var(--cor-header);   
 }
 
-/* Estilos para o modal */
 .modal {
-    display: none; /* O modal começa oculto */
+    display: none;
     position: fixed;
-    z-index: 1001; /* Aparece sobre outros elementos */
+    z-index: 1001;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
@@ -225,7 +208,8 @@ main .item img {
     border-radius: 5px;
 }
 
-.close, .close-carrinho{
+.close,
+.close-carrinho {
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -234,7 +218,7 @@ main .item img {
 }
 
 .close:hover,
-.close:focus, 
+.close:focus,
 .close-carrinho:hover,
 .close-carrinho:focus {
     color: #000;
@@ -244,15 +228,14 @@ i {
     cursor: pointer;
 }
 
-#modal-ingredientes{
+#modal-ingredientes {
     color: var(--cor-header);
 }
 
 .conteiner main {
-    flex: 1; /* Faz o main crescer e ocupar o espaço disponível */
+    flex: 1;
 }
 
-/* Rodapé */
 footer {
     background-color: var(--cor-header);
     color: var(--cor-branca);
@@ -271,7 +254,8 @@ footer {
     margin-bottom: 10px;
 }
 
-.footer-coluna p, .footer-coluna a {
+.footer-coluna p,
+.footer-coluna a {
     color: var(--cor-branca);
     text-decoration: none;
     padding: 0 5px;
@@ -283,4 +267,52 @@ footer {
 
 footer p {
     margin-top: 20px;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filtros button {
+    background-color: var(--cor-fundo-claro);
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.filtros button:hover {
+    background-color: #ffcc00;
+    border-color: #ff9900;
+}
+
+.menu .item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #f5a82231;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.menu .item.visivel {
+    display: flex;
+}
+
+.menu .item:not(.visivel) {
+    display: none;
+}
+
+.img-carrinho {
+    max-width: 500px;
+    max-height: 150px;
+    margin-bottom: 25px;
 }

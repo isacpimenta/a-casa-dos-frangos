@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalização da Compra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .carrinho {
+            margin: 20px 0;
+        }
+        .carrinho ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .carrinho li {
+            border-bottom: 1px solid #ccc;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Finalização da Compra</h2>
+        
+        <label for="metodo-pagamento">Método de Pagamento:</label>
+        <select id="metodo-pagamento" required>
+            <option value="" disabled selected>Selecione um método</option>
+            <option value="cartao">Cartão de Crédito</option>
+            <option value="debito">Cartão de Débito</option>
+            <option value="dinheiro">Dinheiro</option>
+        </select>
+
+        <label>Opção de Entrega:</label>
+        <div>
+            <input type="radio" id="entrega" name="opcao-entrega" value="entrega" required>
+            <label for="entrega">Entrega</label>
+            <input type="radio" id="retirar" name="opcao-entrega" value="retirar" required>
+            <label for="retirar">Retirar no Estabelecimento</label>
+        </div>
+
+        <div class="carrinho">
+            <h3>Itens do Carrinho</h3>
+            <ul id="carrinho-itens"></ul>
+        </div>
+
+        <button onclick="finalizarCompra()">Finalizar Compra</button>
+        <p id="mensagem"></p>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
