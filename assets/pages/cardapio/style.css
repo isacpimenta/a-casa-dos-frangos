@@ -72,6 +72,10 @@ nav a:hover {
     color: var(--cor-branca);
 }
 
+.ativo:hover {
+    color: white;
+}
+
 .conteiner main {
     flex: 1 1 0;
     min-height: 100vh;
